@@ -3,7 +3,7 @@ import Autocomplete from "react-google-autocomplete"
 import {WeatherData} from "./types.tsx";
 import './App.css'
 import {WeatherOverviewCard} from "./components/WeatherOverviewCard.tsx";
-import {fetchWeatherData} from "./hooks/fetchWeatherData.tsx";
+import {fetchGoogleWeatherData} from "./api/fetchGoogleWeatherData.tsx";
 
 const GOOGLE_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
@@ -13,7 +13,7 @@ function App() {
 
 	const fetchWeather = () => {
 		if (!place) return;
-		fetchWeatherData(place)
+		fetchGoogleWeatherData(place)
 			.then((data) => {
 				setWeatherData(data)
 			})
