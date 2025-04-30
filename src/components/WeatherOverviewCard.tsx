@@ -38,9 +38,49 @@ export function WeatherOverviewCard({data}: WeatherCardProps) {
 				</div>
 			</div>
 			<div className="flex items-center text-sm font-light">
-				QPF
+				Relative Humidity
 				<div className="font-bold px-1">
-					{data.currentConditionsHistory.qpf.quantity} {data.currentConditionsHistory.qpf.unit}
+					{data.relativeHumidity}%
+				</div>
+			</div>
+			<div className="flex items-center text-sm font-light">
+				Cloud Cover
+				<div className="font-bold px-1">
+					{data.cloudCover}%
+				</div>
+			</div>
+			<div className="flex items-center text-sm font-light">
+				Visibility
+				<div className="font-bold px-1">
+					{data.visibility.distance} {data.visibility.unit}
+				</div>
+			</div>
+			<div className="flex items-center text-sm font-light">
+				UV Index
+				<div className="font-bold px-1">
+					{data.uvIndex}%
+				</div>
+			</div>
+			<div className="flex items-center text-sm font-light">
+				Air Pressure
+				<div className="font-bold px-1">
+					{data.airPressure.meanSeaLevelMillibars}
+				</div>
+			</div>
+			<div className="flex items-center text-sm font-light">
+				Wind Chill
+				<div className="font-bold px-1">
+					{data.windChill.degrees}°{data.windChill.unit[0]}
+				</div>
+			</div>
+			<div className="flex items-center text-sm font-light">
+				Wind
+				<div className="font-bold px-1">
+					{data.wind.speed.value} mph {data.wind.direction.cardinal}
+				</div>
+				Gust
+				<div className="font-bold px-1">
+					{data.wind.gust.value} mph
 				</div>
 			</div>
 			<div className="flex items-center text-sm font-light">
@@ -48,7 +88,7 @@ export function WeatherOverviewCard({data}: WeatherCardProps) {
 				<div className="font-bold px-1">{data.thunderstormProbability}</div>
 			</div>
 			<div className="flex items-center text-sm font-light">
-				Rain Probability
+				Precipitation Probability
 				<div className="font-bold px-1">
 					{data.precipitation.probability.type} {data.precipitation.probability.percent}%
 				</div>

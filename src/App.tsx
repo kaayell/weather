@@ -15,7 +15,6 @@ function App() {
 		if (!place) return;
 		fetchWeatherData(place)
 			.then((data) => {
-				console.log(JSON.stringify(data, null, 2))
 				setWeatherData(data)
 			})
 	}
@@ -32,7 +31,7 @@ function App() {
 						apiKey={GOOGLE_API_KEY}
 						onPlaceSelected={(place) => setPlace(place)}/>
 				</div>
-				<button className="" onClick={fetchWeather}>
+				<button onClick={fetchWeather}>
 					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
 						 stroke="" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
 						 className="lucide lucide-rotate-ccw-icon lucide-rotate-ccw stroke-indigo-500 hover:stroke-indigo-300">
@@ -41,7 +40,7 @@ function App() {
 					</svg>
 				</button>
 			</div>
-			<div className="flex flex-row">
+			<div className="flex flex-row justify-center">
 				{weatherData && <WeatherOverviewCard data={weatherData}/>}
 			</div>
 		</div>

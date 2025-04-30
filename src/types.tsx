@@ -1,5 +1,4 @@
 export interface WeatherData {
-	isDaytime: boolean;
 	weatherCondition: {
 		description: {
 			text: string;
@@ -11,10 +10,6 @@ export interface WeatherData {
 		unit: string;
 	};
 	feelsLikeTemperature: {
-		degrees: number;
-		unit: string;
-	};
-	dewPoint: {
 		degrees: number;
 		unit: string;
 	};
@@ -32,14 +27,6 @@ export interface WeatherData {
 		probability: {
 			percent: number;
 			type: string;
-		};
-		snowQpf: {
-			quantity: number;
-			unit: string;
-		};
-		qpf: {
-			quantity: number;
-			unit: string;
 		};
 	};
 	thunderstormProbability: number;
@@ -78,13 +65,5 @@ export interface WeatherData {
 			degrees: number;
 			unit: string;
 		}
-		snowQpf: {
-			quantity: number;
-			unit: string;
-		};
-		qpf: {
-			quantity: number;
-			unit: string;
-		};
 	}
 }
